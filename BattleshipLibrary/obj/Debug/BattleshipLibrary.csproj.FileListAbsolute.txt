@@ -1,0 +1,6 @@
+C:\Users\luhamoza\source\repos\BattleshipApp\BattleshipLibrary\bin\Debug\BattleshipLibrary.dll
+C:\Users\luhamoza\source\repos\BattleshipApp\BattleshipLibrary\bin\Debug\BattleshipLibrary.pdb
+C:\Users\luhamoza\source\repos\BattleshipApp\BattleshipLibrary\obj\Debug\BattleshipLibrary.csproj.AssemblyReference.cache
+C:\Users\luhamoza\source\repos\BattleshipApp\BattleshipLibrary\obj\Debug\BattleshipLibrary.csproj.CoreCompileInputs.cache
+C:\Users\luhamoza\source\repos\BattleshipApp\BattleshipLibrary\obj\Debug\BattleshipLibrary.dll
+C:\Users\luhamoza\source\repos\BattleshipApp\BattleshipLibrary\obj\Debug\BattleshipLibrary.pdb

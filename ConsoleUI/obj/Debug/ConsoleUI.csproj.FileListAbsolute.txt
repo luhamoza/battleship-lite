@@ -1,0 +1,10 @@
+C:\Users\luhamoza\source\repos\BattleshipApp\ConsoleUI\bin\Debug\ConsoleUI.exe.config
+C:\Users\luhamoza\source\repos\BattleshipApp\ConsoleUI\bin\Debug\ConsoleUI.exe
+C:\Users\luhamoza\source\repos\BattleshipApp\ConsoleUI\bin\Debug\ConsoleUI.pdb
+C:\Users\luhamoza\source\repos\BattleshipApp\ConsoleUI\obj\Debug\ConsoleUI.csproj.AssemblyReference.cache
+C:\Users\luhamoza\source\repos\BattleshipApp\ConsoleUI\obj\Debug\ConsoleUI.csproj.CoreCompileInputs.cache
+C:\Users\luhamoza\source\repos\BattleshipApp\ConsoleUI\obj\Debug\ConsoleUI.exe
+C:\Users\luhamoza\source\repos\BattleshipApp\ConsoleUI\obj\Debug\ConsoleUI.pdb
+C:\Users\luhamoza\source\repos\BattleshipApp\ConsoleUI\bin\Debug\BattleshipLibrary.dll
+C:\Users\luhamoza\source\repos\BattleshipApp\ConsoleUI\bin\Debug\BattleshipLibrary.pdb
+C:\Users\luhamoza\source\repos\BattleshipApp\ConsoleUI\obj\Debug\ConsoleUI.csproj.CopyComplete
