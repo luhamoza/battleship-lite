@@ -52,13 +52,38 @@ namespace ConsoleUI
 
         private static void RecordPlayerShot(PlayerInfo activePlayer, PlayerInfo opponent)
         {
-            // ask for a shot (we ask for "B2")
-            // determine what row and column that is - split it apart
-            // determine if that is a valid spot
-            // go back to the beginning if not a valid shot
+            bool isValidShot = false;
+            string row = "";
+            int column = 0;
+
+            do
+            {
+                // ask for a shot (we ask for "B2")
+                string shot = AskForShot();
+                // determine what row and column that is - split it apart
+                (row, column) = GameLogic.SplitShotIntoRowAndColumn(shot);
+                // determine if that is a valid spot
+                // go back to the beginning if not a valid shot
+                isValidShot = GameLogic.ValidateShot(activePlayer, row, column);
+
+                // error message if not valid shot
+                if (!isValidShot)
+                {
+                    Console.WriteLine("Invalid shot location. Please try again");
+                }
+            } while (!isValidShot);
 
             // determine shot results
+            bool isAHit = GameLogic.IdentifyShotResult(opponent, row, column);
             // record  results
+            GameLogic.MarkShotResult(activePlayer, row, column, isAHit);
+        }
+
+        private static string AskForShot()
+        {
+            Console.Write("Please enter your shot selection: ");
+            string output = Console.ReadLine();
+            return output;
         }
 
         private static void DisplayShotGrid(PlayerInfo activePlayer)
@@ -135,6 +160,5 @@ namespace ConsoleUI
                 }
             } while (player.ShipLocation.Count < 5);
         }
-
     }
 }
