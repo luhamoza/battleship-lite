@@ -1,4 +1,4 @@
-﻿using BattleshipLibrary.Models;
+using BattleshipLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,8 +60,7 @@ namespace BattleshipLibrary
                     {
                         SpotLetter = letter[i],
                         SpotNumber = number[j],
-                        Status = GridSpotStatus.Empty,
-
+                        Status = GridSpotStatus.Empty
                     };
                     model.ShotGrid.Add(spot);
                 }
@@ -109,13 +108,14 @@ namespace BattleshipLibrary
 
         private static bool ValidateShipLocation(PlayerInfo model, string row, int column)
         {
-            bool isValidLocation = true;
-            foreach (var ship in model.ShipLocation)
+            bool isValidLocation = false;
+            foreach ( var ship in model.ShipLocation)
             {
                 if (ship.SpotLetter == row.ToUpper() && ship.SpotNumber == column)
                 {
-                    isValidLocation = false;
+                    isValidLocation = true;
                 }
+            Console.WriteLine(ship.);
             }
             return isValidLocation;
         }
