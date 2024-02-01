@@ -59,12 +59,19 @@ namespace ConsoleUI
             do
             {
                 // ask for a shot (we ask for "B2")
-                string shot = AskForShot();
-                // determine what row and column that is - split it apart
-                (row, column) = GameLogic.SplitShotIntoRowAndColumn(shot);
-                // determine if that is a valid spot
-                // go back to the beginning if not a valid shot
-                isValidShot = GameLogic.ValidateShot(activePlayer, row, column);
+                string shot = AskForShot(activePlayer);
+                try
+                {
+                    // determine what row and column that is - split it apart
+                    (row, column) = GameLogic.SplitShotIntoRowAndColumn(shot);
+                    // determine if that is a valid spot
+                    // go back to the beginning if not a valid shot
+                    isValidShot = GameLogic.ValidateShot(activePlayer, row, column);
+                }
+                catch (Exception)
+                {
+                    isValidShot = false;
+                }
 
                 // error message if not valid shot
                 if (!isValidShot)
@@ -77,11 +84,26 @@ namespace ConsoleUI
             bool isAHit = GameLogic.IdentifyShotResult(opponent, row, column);
             // record  results
             GameLogic.MarkShotResult(activePlayer, row, column, isAHit);
+
+            DisplayResult(row, column, isAHit);
         }
 
-        private static string AskForShot()
+
+        private static void DisplayResult(string row, int column, bool isAHit)
         {
-            Console.Write("Please enter your shot selection: ");
+            if (!isAHit)
+            {
+                Console.WriteLine($"{row.ToUpper()}{column} is a miss.");
+            }
+            else
+            {
+                Console.WriteLine($"{row.ToUpper()}{column} is a Hit!");
+            }
+            Console.WriteLine();
+        }
+        private static string AskForShot(PlayerInfo player)
+        {
+            Console.Write($"{player.UserName}, please enter your shot selection: ");
             string output = Console.ReadLine();
             return output;
         }
@@ -154,7 +176,14 @@ namespace ConsoleUI
             {
                 Console.Write($"Ship number {player.ShipLocation.Count + 1}: ");
                 string location = Console.ReadLine();
-                bool isValidAnswer = GameLogic.PlaceShip(player, location);
+                bool isValidAnswer = false;
+                try
+                {
+                    isValidAnswer = GameLogic.PlaceShip(player, location);
+                }
+                catch (Exception)
+                {
+                }
                 if (!isValidAnswer)
                 {
                     Console.WriteLine("Please insert valid Grid Number");
