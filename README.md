@@ -19,9 +19,16 @@ Gameplay
 
 *   Players take turns firing shots at their opponent's grid.
 *   Each player has a grid where they place their ships.
-*   The application prompts players to input their shots by providing grid coordinates (e.g., A1, B2).
+*   The application prompts players to input their shots by providing grid coordinates 
+```
+A1, A2, A3, A4, A5
+B1, B2, B3, B4, B5
+C1, C2, C3, C4, C5
+D1, D2, D3, D4, D5
+E1, E2, E3, E4, E5
+```
 *   The game displays the results of each shot as hits, misses, or sunk ships.
-*   The game continues until one player sinks all of their opponent's ships.
+*   The game continues until one player sinks 5 of their opponent's ships.
 
 * * *
 
